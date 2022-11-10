@@ -1,6 +1,3 @@
-# Mauricio Rubio Haro
-# 319256970 
-
 # 1) El tiempo empleado, en horas, en hacer un determinado producto sigue una distribución N(10,2) . Se pide la probabilidad de que ese producto se tarde en hacer:
 
 ## (a) Menos de 7 horas 
@@ -39,27 +36,22 @@ print("La distribución gamma y la distribución JI tienen un comportamiento igu
 
 ## b) Observa las siguiente gráfica de la densidad de una v.a. Normal y basado en lo observado encuentre el valor de la media y el número de simulaciones realizadas, también comenta que intervalo o intervalos de números tienen poca probabilidad de aparecer en las simulaciones.
 
-## Valor de la media -> 5,000
-## Número de simulaciones -> 10,000
-## Intervalos: 0<X<2000 y 8000<X<10000
-
 # 4). Las siguientes líneas de código son para realizar la transformación de una variable aleatoria, comenta el código línea por línea, corre el código y justifica que distribución siguen las simulaciones observadas en la lista "transformación".
 
 #Transformación.
-uniforme<- runif(10000, -1, 1) # Declaración e inicialización de una variable aleatoria uniforme que toma 10,000 valores aleatorios entre -1 y 1
-transformacion<-seq(1,10000, by=1) # Declaración e inicialización de una secuencia del 1 al 10,000 con incremento de 1
-cont<-1 # Contador
-for(i in uniforme){ # Iterador de la variable uniforme (10,000)
-  if(i<0){
-    transformacion[cont]<-0
-  }else{
-    transformacion[cont]<-1
-  }
-  # Si el valor de la variable uniforme en la posición i es negativo, la posición i en la transformación va a ser igual a 0
-  # en otro caso va a ser igual a 1.
-  cont<-cont+1 # Aumento del contador para seguir "moviendose" sobre la transformacion
+uniforme<- runif(10000, -1, 1)
+transformacion<-seq(1,10000, by=1)
+cont<-1
+for(i in uniforme){
+if(i<0){
+transformacion[cont]<-0
+}else{
+transformacion[cont]<-1
+}
+cont<-cont+1
 }
 #Valor esperado
-mean(transformacion) # Saca el valor medio de los 10,000 que tiene transformación
+mean(transformacion)
 #Grafica
-plot(transformacion) 
+plot(transformacion)
+
